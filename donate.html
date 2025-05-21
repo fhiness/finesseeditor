@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+            #donate{
+            background: linear-gradient(to top, white,antiquewhite,white );
+            height: 90%;
+            width: 100%;
+            display: grid;
+            place-items: center;
+            text-align: center;
+        }
+        .donate{
+            background-color: aliceblue;
+            box-shadow: 2px 4px 8px black;
+            border-radius: 10px;
+            transform: translateY(-120px);
+            
+            width: 300px;
+            height: 250px;
+            text-align: center;
+        }
+         input{
+            border-bottom: 3px solid rgb(9, 241, 9);
+            font-size: 20px;
+            border-top: none;
+            border-right: none;
+            border-left: none;
+            height: 50px;
+            color: black;
+            background-color: transparent;
+            text-align: center;
+            outline: none;
+        }
+  </style>
+</head>
+<body>
+       <section id="donate">
+    <a href="#donatecon">
+        <button class="but">DONATE TO DEVELOPERS <br>↓</button></a>
+    <div id="donatecon">
+        <div class="donate">
+            <h1>ACCOUNT no.</h1>
+            <p>BANK: Opay ✔</p>
+            <p>NAME: Odebunmi Lukman Adekunle ✔</p>
+            <label for="ACCOUNT"> ACCOUNT NUMBER:
+                <input type="text" id="account" value="9071221697" disabled>
+                <button onclick="copy2()">copy 🖊</button>
+                <span id="co" style="display: none;">copied ✔</span>
+            </label>
+        </div>
+    </div>
+   </section>
+
+   <script>
+    function copy2() {
+    var account = document.getElementById("account");
+        document.getElementById("co").style.display = "block";
+        setInterval(() => {
+            document.getElementById("co").style.display = "none";
+        }, 3000);
+        
+        navigator.clipboard.writeText(account.value).then(()=>{
+            console.log("copied");
+        }
+    ).catch(()=>{
+        console.error('error copying');
+    })
+
+};
+   </script>
+</body>
+</html>
